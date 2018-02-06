@@ -105,7 +105,8 @@ section.homepage-slider{
 }
 section.homepage-slider div.intro{
 	position:absolute;
-	top:20%;
+	text-align: center;
+	top:2%;
 	left:7%;
 	opacity:.7;
 }
@@ -120,16 +121,18 @@ section.homepage-slider h1{
 }
 section.homepage-slider p{
 	overflow:hidden;
+	text-align: center;
 	width:100%;
 	margin-bottom:2px;
 }
 section.homepage-slider span{
 	background-color:#fff;
+	text-align: center;
 	color:#000;
 	padding:2px 10px;
 	line-height:30px;
-	font-size:28px;
-	float:left;
+	font-size:24px;
+	float:center;
 	width:auto;
 }
 section.header_text.sub{
@@ -783,4 +786,8 @@ section.our_client .row{
 }
 #bottom-thing{
 	margin-left: 400px;
+}
+#signup_btn{
+	margin-left: 50%;
+	margin-top: 5%;
 }
