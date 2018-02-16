@@ -42,14 +42,14 @@
 					<div class="span8">
 						<div class="account pull-right">
 							<ul class="user-menu">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 								<!-- <li><a href="#">My Account</a></li> -->
-								<!-- <li><a href="cart.html">Your Cart</a></li> -->
-								<!-- <li><a href="checkout.html">Checkout</a></li> -->
-								<li><a href="about.html">About Us</a></li>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="register.html">Register</a></li>
+								<!-- <li><a href="cart.php">Your Cart</a></li> -->
+								<!-- <li><a href="checkout.php">Checkout</a></li> -->
+								<li><a href="about.php">About Us</a></li>
+								<li><a href="login.php">Login</a></li>
+								<li><a href="register.php">Register</a></li>
 							</ul>
 						</div>
 					</div>
@@ -58,7 +58,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="index.html" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
+					<a href="index.php" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
 			<section class="header_text sub">
@@ -118,10 +118,17 @@
 									<p>Welcome to glasswap!</p>
 								</div>
 								<hr>
-								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Register"></div>
+								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Register" onclick="register()"></div>
 							</fieldset>
 						</form>
 					</div>
+					<?php
+            echo "hey";
+  					if(isset($_POST['submit'])){
+  						$password = $_POST['password'];
+  					}
+  					echo password_hash(password, PASSWORD_DEFAULT);
+					?>
 				</div>
 			</section>
 			<section id="footer-bar">
@@ -129,10 +136,10 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="./index.html">Home</a></li>
-							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contact Us</a></li>
-							<li><a href="./cart.html">Login</a></li>
+							<li><a href="./index.php">Home</a></li>
+							<li><a href="./about.php">About Us</a></li>
+							<li><a href="./contact.php">Contact Us</a></li>
+							<li><a href="./cart.php">Login</a></li>
 						</ul>
 					</div>
 					<div class="span4">
@@ -159,7 +166,7 @@
 		<script>
 			$(document).ready(function() {
 				$('#checkout').click(function (e) {
-					document.location.href = "checkout.html";
+					document.location.href = "checkout.php";
 				})
 			});
 		</script>
