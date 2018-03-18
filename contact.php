@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head> 
+	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,14 +69,14 @@
 							<h5>CUSTOMER SERVICE</h5>
 							<p><strong>Phone:</strong>&nbsp;(123) 456-7890<br>
 							<strong>Fax:</strong>&nbsp;+04 (123) 456-7890<br>
-							<strong>Email:</strong>&nbsp;<a href="#">glasswap.contactus@yahoo.com</a>
+							<strong>Email:</strong>&nbsp;<a href="#">glasswap@gmail.com</a>
 							</p>
 
 						</div>
 					</div>
 					<div class="span7">
 						<p>For any questions or feedback, please message us below! We would love to hear about your glasswap experience!</p>
-						<form method="post" action="#">
+						<form method="post" action="mail.php">
 							<fieldset>
 								<div class="clearfix">
 									<label for="name"><span>Name:</span></label>
