@@ -12,11 +12,18 @@ $Zip = $_POST['zip'];
 
 $query   = "INSERT INTO userinfo (name,email,password,address,city,state,zip) VALUES('$Name','$Email','$Password','$Address','$City','$State','$Zip')";
 $result = mysqli_query($conn,$query);
-
+//
 if (mysqli_errno($conn) == 1062) {
-    print 'You have already signed up!';
+  $message = "This email is already in use.\\nTry again.";
+  echo "<script type='text/javascript'>if(alert('$message')){} else window.location = 'register.php';</script>";
+  //header("Location: register.php");
+    // print 'You have already signed up!';
 }
-
+//
+// if (mysqli_errno($conn) == 1062) {
+//   header("Location: register.php");
+//     // print 'You have already signed up!';
+// }
 // if(isset($Email)){
 //   $mysql_get_users = mysqli_query($conn, "SELECT * FROM userinfo where email='$Email'");
 //

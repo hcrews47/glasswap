@@ -98,7 +98,7 @@
 								<div class="control-group">
 									<label class="control-label">Name</label>
 									<div class="controls">
-										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" id= "username"  title="Please enter your name" required>
+										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" pattern = "[a-zA-Z ]{1,}" id= "username"  title="Please enter your name" required>
 
 									</div>
 								</div>
@@ -111,20 +111,26 @@
 								<div class="control-group">
 									<label class="control-label">Password:</label>
 									<div class="controls">
-										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'Must contain atleast oen number and one uppercase and lowercase letter, and atleast 8 characters.' : ''); if(this.checkValidity()) form.password2.pattern = this.value;" required>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Confirm Password:</label>
+									<div class="controls">
+										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
 									</div>
 								</div>
 
 								<div class="control-group">
 									<label class="control-label">Street Address:</label>
 									<div class="controls">
-										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" title="Must contain at least one number and one uppercase and lowercase letter" required>
+										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This does not match the password entered above.' : '');" required>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">City:</label>
 									<div class="controls">
-										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" required>
+										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" pattern="[a-zA-Z. _]{1,}" required>
 									</div>
 								</div>
 								<div>
