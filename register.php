@@ -93,44 +93,44 @@
 					</div> -->
 					<div class="span7" id="register_span7">
 						<h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
-						<form action="#" method="post" class="form-stacked">
+						<form action="send_info.php" method="post" class="form-stacked">
 							<fieldset>
 								<div class="control-group">
 									<label class="control-label">Name</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your name" class="input-xlarge" id= "username"  title="Please enter your name" required>
+										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" id= "username"  title="Please enter your name" required>
 
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">Email address:</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your email" class="input-xlarge" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter a valid email address" required>
+										<input type="text" name="email" placeholder="Enter your email" class="input-xlarge" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter a valid email address" required>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">Password:</label>
 									<div class="controls">
-										<input type="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 									</div>
 								</div>
 
 								<div class="control-group">
 									<label class="control-label">Street Address:</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" title="Must contain at least one number and one uppercase and lowercase letter" required>
+										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" title="Must contain at least one number and one uppercase and lowercase letter" required>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">City:</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your city" class="input-xlarge" required>
+										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" required>
 									</div>
 								</div>
 								<div>
 								<div class="control-group">
 									<label class="control-label">State:</label>
-									<input list="browsers" placeholder="Select your state" required>
+									<input list="browsers" name="state" placeholder="Select your state" required>
 
 										<datalist id="browsers">
 											<option value="AL">Alabama</option>
@@ -189,7 +189,7 @@
 								<div class="control-group">
 									<label class="control-label">Zipcode:</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your 5 digit zipcode" class="input-xlarge" pattern="[0-9]{5}" title="Zipcode must be 5 numbers long." required>
+										<input type="text" name="zip" placeholder="Enter your 5 digit zipcode" class="input-xlarge" pattern="[0-9]{5}" title="Zipcode must be 5 numbers long." required>
 									</div>
 								</div>
 									<div class="control-group">

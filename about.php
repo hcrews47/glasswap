@@ -85,7 +85,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="signup_btn" type="submit" value="Sign Up"></div>
+			<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="signup_btn" type="submit" value="Sign Up" onclick="location.href='register.php'"></div>
 			<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
