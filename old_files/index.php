@@ -94,8 +94,8 @@
 													<div class="product-box">
 														<span class="sale_tag"></span>
 														<p><a href="index.php"><img src="themes/images/ladies/1.png" alt="" /></a></p>
-														<a href="product_detail1.php" class="title">Black Full Frames</a><br/>
-														<a href="product_detail1.php" class="category">-1.25</a>
+														<a href="index.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="index.php" class="category">Commodo consequat</a>
 														<p class="price">$17.25</p>
 													</div>
 												</li>
@@ -103,24 +103,24 @@
 													<div class="product-box">
 														<span class="sale_tag"></span>
 														<p><a href="index.php"><img src="themes/images/ladies/2.png" alt="" /></a></p>
-														<a href="product_detail2.php" class="title">Blue Mist Frames</a><br/>
-														<a href="product_detail2.php" class="category">2.50</a>
+														<a href="index.php" class="title">Quis nostrud exerci tation</a><br/>
+														<a href="index.php" class="category">Quis nostrud</a>
 														<p class="price">$32.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/3.png" alt="" /></a></p>
-														<a href="product_detail3.php" class="title">Rounded Multicolor</a><br/>
-														<a href="product_detail3.php" class="category">-1.75</a>
+														<a href="index.php" class="title">Know exactly turned</a><br/>
+														<a href="index.php" class="category">Quis nostrud</a>
 														<p class="price">$14.20</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/4.png" alt="" /></a></p>
-														<a href="product_detail4.php" class="title">You think fast</a><br/>
-														<a href="product_detail4.php" class="category">0.75</a>
+														<a href="index.php" class="title">You think fast</a><br/>
+														<a href="index.php" class="category">World once</a>
 														<p class="price">$31.45</p>
 													</div>
 												</li>
@@ -131,32 +131,32 @@
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/5.png" alt="" /></a></p>
-														<a href="product_detail5.php" class="title">Thin Wireframe Lenses</a><br/>
-														<a href="product_detail5.php" class="category">2.25</a>
+														<a href="index.php" class="title">Know exactly</a><br/>
+														<a href="index.php" class="category">Quis nostrud</a>
 														<p class="price">$22.30</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/6.png" alt="" /></a></p>
-														<a href="product_detail6.php" class="title">Clear Frames</a><br/>
-														<a href="product_detail6.php" class="category">-3.25</a>
+														<a href="index.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="index.php" class="category">Commodo consequat</a>
 														<p class="price">$40.25</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/7.png" alt="" /></a></p>
-														<a href="product_detail7.php" class="title">Black Floral Frames</a><br/>
-														<a href="product_detail7.php" class="category">1.25</a>
+														<a href="index.php" class="title">You think water</a><br/>
+														<a href="index.php" class="category">World once</a>
 														<p class="price">$10.45</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="index.php"><img src="themes/images/ladies/8.png" alt="" /></a></p>
-														<a href="product_detail8.php" class="title">Quis nostrud exerci</a><br/>
-														<a href="product_detail8.php" class="category">Quis nostrud</a>
+														<a href="index.php" class="title">Quis nostrud exerci</a><br/>
+														<a href="index.php" class="category">Quis nostrud</a>
 														<p class="price">$35.50</p>
 													</div>
 												</li>
@@ -167,7 +167,6 @@
 							</div>
 						</div>
 						<br/>
-						<!--  
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
@@ -255,7 +254,6 @@
 								</div>
 							</div>
 						</div>
-					-->
 						<div class="row feature_box">
 							<div class="span4">
 								<div class="service">
