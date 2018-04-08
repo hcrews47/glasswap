@@ -117,14 +117,14 @@
 								<div class="control-group">
 									<label class="control-label">Confirm Password:</label>
 									<div class="controls">
-										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
+										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onchange = "This does not match the above password." required>
 									</div>
 								</div>
 
 								<div class="control-group">
 									<label class="control-label">Street Address:</label>
 									<div class="controls">
-										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This does not match the password entered above.' : '');" required>
+										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This is an invalid address.' : '');" required>
 									</div>
 								</div>
 								<div class="control-group">

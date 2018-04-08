@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head> 
+	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,19 +61,19 @@
 				<div class="row">
 					<div class="span5" id="login_span5">
 						<h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
-						<form action="#" method="post">
+						<form action="verify_login.php" method="post">
 							<input type="hidden" name="next" value="/">
 							<fieldset>
 								<div class="control-group">
-									<label class="control-label">Username</label>
+									<label class="control-label">Email Address</label>
 									<div class="controls">
-										<input type="text" placeholder="Enter your username" id="username" class="input-xlarge">
+										<input type="text" placeholder="Enter your username" name="email" id="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label">Username</label>
+									<label class="control-label">Password</label>
 									<div class="controls">
-										<input type="password" placeholder="Enter your password" id="password" class="input-xlarge">
+										<input type="password" placeholder="Enter your password" name="password" id="password" class="input-xlarge">
 									</div>
 								</div>
 								<div class="control-group">
