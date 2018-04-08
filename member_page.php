@@ -41,6 +41,13 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">
+							<li class="hey">Hi, <?php
+							session_start();
+							include_once 'connection.php';
+							$conn = Connect();
+							$query = "SELECT name FROM userinfo WHERE email='".$_SESSION['email']."'";
+							$result = mysqli_query($conn, $query)->fetch_assoc()["name"];
+							echo $result;?></li>
 							<li><a href="index.php">Home</a></li>
 							<li><a href="contact.php">Contact Us</a></li>
 							<!-- <li><a href="cart.php">Your Cart</a></li> -->

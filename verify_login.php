@@ -17,19 +17,18 @@ $pass_check = password_verify($_POST['password'], $result2);
 $count=mysqli_num_rows($result);
 $row=mysqli_fetch_array($result);
 
-if ($count != 1) {
+if ($count != 1 || !password_verify($_POST['password'], $result2)) {
   $message = "Invalid username or password.";
   echo "<script type='text/javascript'>if(alert('$message')){} else window.location = 'login.php';</script>";
   //header("Location: register.php");
     // print 'You have already signed up!';
 }
 else {
-  if(password_verify($_POST['password'], $result2)){
-    session_start();
-    $_SESSION['username'] = $Email;
-    $_SESSION['password'] = $Password;
-    header("location: member_page.php");
-  }
+  session_destroy();
+  session_start();
+  $_SESSION['email'] = $Email;
+  $_SESSION['password'] = $Password;
+  header("location: member_page.php");
 }
 mysqli_close($conn);
 ?>
