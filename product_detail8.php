@@ -92,7 +92,7 @@
 				</div>
 			</section>
 			<section class="header_text sub">
-			<p><a href="index.php"><img src="themes/images/ladies/8.png" alt="" /></a></p>
+			<p><a href="#"><img src="themes/images/ladies/8.png" alt="" /></a></p>
 				<h2><span>Thin Circle Wireframes</span></h2>
 			</section>
 			<section class="main-content">
@@ -139,17 +139,19 @@
 								</address>
 								<h4><strong id="cost1">Price: $35.50</strong></h4>
 								<h4><strong id="bit_cost">Price in Bitcoin: </strong></h4>
+								<form action="product_detail5_discount.php" method="post" class="form-stacked">
 								<fieldset>
 									<div class="control-group">
 										<label class="control-label">Promo Code:</label>
 										<div class="controls">
-											<input type="text" code="code" placeholder="Enter a code for a discount!" class="input-large" id= "Promo Code"  title="Invalid Code!" required>
+											<input type="text" code="code" placeholder="Enter a code for a discount!" class="input-large" id= "Promo Code" pattern='SAVE20' title="Invalid Code!" required>
 
 										</div>
 									</div>
-									<div class="actions"><input tabindex="9" class="btn btn-inverse medium" id="reg_btn" type="submit" value="Enter" formaction="product_detail1_discount.php">
+									<div class="actions"><input tabindex="9" class="btn btn-inverse medium" id="reg_btn" type="submit" value="Enter" formaction="product_detail8_discount.php">
 									</div>
 								</fieldset>
+							</form>
 							</div>
 							<!--
 							<div class="span5">

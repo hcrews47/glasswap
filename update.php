@@ -24,19 +24,23 @@ $conn = Connect();
 
 $updates = array();
 if (!empty($Name))
-  $updates[] = 'name="'.mysqli_real_escape_string($conn,$Name).'"';
-if (!empty($Password))
-  $updates[] = 'password="'.mysqli_real_escape_string($conn,$Password).'"';
+  $updates[] = "name='$Name'";
+if (!empty($_POST['password']))
+  $updates[] = "password='$Password'";
 if (!empty($Address))
-  $updates[] = 'address="'.mysqli_real_escape_string($conn,$Address).'"';
+  $updates[] = "address='$Address'";
 if (!empty($City))
-  $updates[] = 'city="'.mysqli_real_escape_string($conn,$City).'"';
+  $updates[] = "city='$City'";
 if (!empty($State))
-  $updates[] = 'state="'.mysqli_real_escape_string($conn,$State).'"';
+  $updates[] = "state='$State'";
 if (!empty($Zip))
-  $updates[] = 'zip="'.mysqli_real_escape_string($conn,$Zip).'"';
+  $updates[] = "zip='$Zip'";
 $updates = implode(', ', $updates);
 
-$query = "UPDATE userinfo SET '$updates' WHERE email='".$_SESSION['email']."'";
+echo $updates;
+
+$query = "UPDATE userinfo SET $updates WHERE email='".$_SESSION['email']."'";
+echo $query;
 $result = mysqli_query($conn, $query);
+header("location: my_account.php")
 ?>

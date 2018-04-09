@@ -92,7 +92,7 @@
 				</div>
 			</section>
 			<section class="header_text sub">
-			<p><a href="index.php"><img src="themes/images/ladies/3.png" alt="" /></a></p>
+			<p><a href="#"><img src="themes/images/ladies/3.png" alt="" /></a></p>
 				<h2><span>Rounded Multicolor</span></h2>
 			</section>
 			<section class="main-content">

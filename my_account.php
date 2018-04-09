@@ -125,7 +125,7 @@
 						<form action="enterpassword.php" method="post" class="form-stacked">
 							<fieldset>
 								<div class="control-group">
-									<label class="control-label">Name</label>
+									<label class="control-label">Name:</label>
 									<div class="controls">
 									<p><?php
 									if (session_status() == PHP_SESSION_NONE) {

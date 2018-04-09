@@ -108,25 +108,15 @@
 
 
 							<div class="span5">
+
+							<div class="span5">
 							<form action="https://test.bitpay.com/checkout" method="post" >
-							  <input type="hidden" name="action" value="checkout" onclick="document.write('<?php
-								include_once 'connection.php';
-								$conn    = Connect();
-								$User = "hcrews47";
-							  $Email = "jhc6we@virginia.edu";
-								$Item = 'Clear Frames';
-							  $Cost = 40.25;
-								$query   = "INSERT INTO transaction_history (user,email,item,cost) VALUES('$User','$Email','$Item','$Cost')";
-							  $result = mysqli_query($conn,$query);
-								?>');" />
+							  <input type="hidden" name="action" value="checkout" />
 							  <input type="hidden" name="posData" value="" />
 							  <input type="hidden" name="data" value="mqnRbZb0/9YYMCwjhb90s1q1Vbh+BjRNBg2FHM69n4x76TpGUTSdsEk65eRJUK4hUQkdoJiwI8dN0a37O/jwef+LOjsIXedbot002pq38ITA9cVOwgDXOjVx49yW4u7zaxuncMRp2my6k8Z0VABYzW5Wl4H7N3QxUju6YcPHwro=" />
-								<?php if(isset($_SESSION['logon'])){
-									?>
-								<input type="image" src="https://test.bitpay.com/img/button-small.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-								<?php
-							} ?>
+							  <input type="image" src="https://test.bitpay.com/img/button-medium.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
 							</form>
+
 
 
 
@@ -135,21 +125,9 @@
 									<strong>Product Code:</strong> <span>Product 14</span><br>
 									<strong>Availability:</strong> <span>In Stock</span><br>
 								</address>
-								<h4><strong id="cost1">Price: $40.25</strong></h4>
+								<h4><strong id="cost1">Price: $32.20</strong></h4>
 								<h4><strong id="bit_cost">Price in Bitcoin: </strong></h4>
-								<form action="product_detail5_discount.php" method="post" class="form-stacked">
-								<fieldset>
-									<div class="control-group">
-										<label class="control-label">Promo Code:</label>
-										<div class="controls">
-											<input type="text" code="code" placeholder="Enter a code for a discount!" class="input-large" id= "Promo Code"  pattern='SAVE20' title="Invalid Code!" required>
 
-										</div>
-									</div>
-									<div class="actions"><input tabindex="9" class="btn btn-inverse medium" id="reg_btn" type="submit" value="Enter" formaction="product_detail6_discount.php">
-									</div>
-								</fieldset>
-							</form>
 							</div>
 							<!--
 							<div class="span5">

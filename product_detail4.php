@@ -92,7 +92,7 @@
 				</div>
 			</section>
 			<section class="header_text sub">
-			<p><a href="index.php"><img src="themes/images/ladies/4.png" alt="" /></a></p>
+			<p><a href="#"><img src="themes/images/ladies/4.png" alt="" /></a></p>
 				<h2><span>You Think Fast</span></h2>
 			</section>
 			<section class="main-content">
@@ -143,7 +143,7 @@
 							} ?>
 								<h4><strong id="cost1">Price: $17.25</strong></h4>
 								<h4><strong id="bit_cost">Price in Bitcoin: </strong></h4>
-								
+
 							</div>
 							<!--
 							<div class="span5">

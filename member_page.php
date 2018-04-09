@@ -115,7 +115,7 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="index.php"><img src="themes/images/ladies/1.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/1.png" alt="" /></p>
 														<a href="product_detail1.php" class="title">Black Full Frames</a><br/>
 														<a href="product_detail1.php" class="category">-1.25</a>
 														<p class="price">$17.25</p>
@@ -124,7 +124,7 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="index.php"><img src="themes/images/ladies/2.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/2.png" alt="" /></p>
 														<a href="product_detail2.php" class="title">Blue Mist Frames</a><br/>
 														<a href="product_detail2.php" class="category">2.50</a>
 														<p class="price">$32.50</p>
@@ -132,7 +132,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/3.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/3.png" alt="" /></p>
 														<a href="product_detail3.php" class="title">Rounded Multicolor</a><br/>
 														<a href="product_detail3.php" class="category">-1.75</a>
 														<p class="price">$14.20</p>
@@ -140,7 +140,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/4.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/4.png" alt="" /></p>
 														<a href="product_detail4.php" class="title">You think fast</a><br/>
 														<a href="product_detail4.php" class="category">0.75</a>
 														<p class="price">$31.45</p>
@@ -162,7 +162,7 @@
 											<ul class="thumbnails">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/5.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/5.png" alt="" /></p>
 														<a href="product_detail5.php" class="title">Thin Wireframe Lenses</a><br/>
 														<a href="product_detail5.php" class="category">2.25</a>
 														<p class="price">$22.30</p>
@@ -170,7 +170,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/6.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/6.png" alt="" /></p>
 														<a href="product_detail6.php" class="title">Clear Frames</a><br/>
 														<a href="product_detail6.php" class="category">-3.25</a>
 														<p class="price">$40.25</p>
@@ -178,7 +178,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/7.png" alt="" /></a></p>
+														<p><img src="themes/images/ladies/7.png" alt="" /></p>
 														<a href="product_detail7.php" class="title">Black Floral Frames</a><br/>
 														<a href="product_detail7.php" class="category">1.25</a>
 														<p class="price">$10.45</p>
@@ -186,9 +186,9 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="index.php"><img src="themes/images/ladies/8.png" alt="" /></a></p>
-														<a href="product_detail8.php" class="title">Quis nostrud exerci</a><br/>
-														<a href="product_detail8.php" class="category">Quis nostrud</a>
+														<p><img src="themes/images/ladies/8.png" alt="" /></p>
+														<a href="product_detail8.php" class="title">Thin Circle WireFrames</a><br/>
+														<a href="product_detail8.php" class="category">-1.00</a>
 														<p class="price">$35.50</p>
 													</div>
 												</li>
