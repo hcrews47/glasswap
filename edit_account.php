@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<?php session_start();?>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="themes/js/superfish.js"></script>
 		<script src="themes/js/jquery.scrolltotop.js"></script>
+		<script src="logout.js"></script>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
@@ -58,12 +60,12 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="member_page.php" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
+					<a href="index.php" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
 			<section class="header_text sub">
 			<img class="pageBanner" src="themes/images/banner.png" alt="New products" >
-				<h4><span>Register</span></h4>
+				<h4><span>Edit Infomation</span></h4>
 			</section>
 			<section class="main-content">
 				<div class="row">
@@ -92,51 +94,46 @@
 						</form>
 					</div> -->
 					<div class="span7" id="register_span7">
-						<h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
-						<form action="send_info.php" method="post" class="form-stacked">
+						<p>Leave it blanked if no change needed</p>
+						<form action="update.php" method="post" class="form-stacked">
 							<fieldset>
 								<div class="control-group">
-									<label class="control-label">Name</label>
+									<label class="control-label">New Name</label>
 									<div class="controls">
-										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" pattern = "[a-zA-Z ]{1,}" id= "username"  title="Please enter your name" required>
+										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" pattern = "[a-zA-Z ]{1,}" id= "username"  title="Please enter your name" >
 
 									</div>
 								</div>
+
 								<div class="control-group">
-									<label class="control-label">Email address:</label>
+									<label class="control-label">New Password:</label>
 									<div class="controls">
-										<input type="text" name="email" placeholder="Enter your email" class="input-xlarge" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter a valid email address" required>
+										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'Must contain atleast oen number and one uppercase and lowercase letter, and atleast 8 characters.' : ''); if(this.checkValidity()) form.password2.pattern = this.value;" >
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label">Password:</label>
+									<label class="control-label">Confirm New Password:</label>
 									<div class="controls">
-										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'Must contain atleast oen number and one uppercase and lowercase letter, and atleast 8 characters.' : ''); if(this.checkValidity()) form.password2.pattern = this.value;" required>
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label">Confirm Password:</label>
-									<div class="controls">
-										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onchange = "This does not match the above password." required>
+										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onchange = "This does not match the above password." >
 									</div>
 								</div>
 
 								<div class="control-group">
 									<label class="control-label">Street Address:</label>
 									<div class="controls">
-										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This is an invalid address.' : '');" required>
+										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This is an invalid address.' : '');" >
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">City:</label>
 									<div class="controls">
-										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" pattern="[a-zA-Z. _]{1,}" required>
+										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" pattern="[a-zA-Z. _]{1,}" >
 									</div>
 								</div>
 								<div>
 								<div class="control-group">
 									<label class="control-label">State:</label>
-									<input list="browsers" name="state" placeholder="Select your state" required>
+									<input list="browsers" name="state" placeholder="Select your state" >
 
 										<datalist id="browsers">
 											<option value="AL">Alabama</option>
@@ -195,14 +192,13 @@
 								<div class="control-group">
 									<label class="control-label">Zipcode:</label>
 									<div class="controls">
-										<input type="text" name="zip" placeholder="Enter your 5 digit zipcode" class="input-xlarge" pattern="[0-9]{5}" title="Zipcode must be 5 numbers long." required>
+										<input type="text" name="zip" placeholder="Enter your 5 digit zipcode" class="input-xlarge" pattern="[0-9]{5}" title="Zipcode must be 5 numbers long." >
 									</div>
 								</div>
-									<div class="control-group">
-									<p>Welcome to glasswap!</p>
+
 								</div>
 								<hr>
-								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Register"></div>
+								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Update"></div>
 							</fieldset>
 						</form>
 					</div>

@@ -124,7 +124,7 @@
 							  <input type="hidden" name="data" value="mqnRbZb0/9YYMCwjhb90s1q1Vbh+BjRNBg2FHM69n4x76TpGUTSdsEk65eRJUK4hUQkdoJiwI8dN0a37O/jweWF8ybqh8OJ78TCvoT4ncG3l2At5McFp/VEG4Xx0qi2NSLFdBGNK1dk2CbpEvoYrPdmrYe1QvCaNcb+vTBqmCvI=" />
 
 								<!-- <input type="image" src="https://test.bitpay.com/img/button-small.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." > -->
-					
+
 							</form>
 							<?php if(!isset($_SESSION['logon'])){
 								?>
@@ -143,6 +143,7 @@
 							} ?>
 								<h4><strong id="cost1">Price: $17.25</strong></h4>
 								<h4><strong id="bit_cost">Price in Bitcoin: </strong></h4>
+								
 							</div>
 							<!--
 							<div class="span5">

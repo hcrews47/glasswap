@@ -28,11 +28,12 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="themes/js/superfish.js"></script>
 		<script src="themes/js/jquery.scrolltotop.js"></script>
-		<script type='text/javascript'>
+		<script src="logout.js"></script>
+		<!-- <script type='text/javascript'>
 		function logout() {
 			if(alert('Are you sure you want to logout?')){} else {window.location = 'index.php'};
 		}
-	</script>
+	</script> -->
 
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

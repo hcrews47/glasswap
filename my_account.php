@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<?php session_start();?>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="themes/js/superfish.js"></script>
 		<script src="themes/js/jquery.scrolltotop.js"></script>
+		<script src="logout.js"></script>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
@@ -42,14 +44,29 @@
 					<div class="span8">
 						<div class="account pull-right">
 							<ul class="user-menu">
-								<li><a href="index.php">Home</a></li>
+								<li><a href="member_page.php">Home</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<!-- <li><a href="#">My Account</a></li> -->
 								<!-- <li><a href="cart.php">Your Cart</a></li> -->
 								<!-- <li><a href="checkout.php">Checkout</a></li> -->
 								<li><a href="about.php">About Us</a></li>
+								<?php if(!isset($_SESSION['logon'])){
+									?>
 								<li><a href="login.php">Login</a></li>
+								<?php
+							} ?>
+							<?php if(!isset($_SESSION['logon'])){
+								?>
 								<li><a href="register.php">Register</a></li>
+								<?php
+							} ?>
+
+							<?php if(isset($_SESSION['logon'])){
+								?>
+							<li><a href="my_account.php">My Account</a></li>
+							<li onclick="logout()"><a href="#">Logout</a></li>
+							<?php
+						} ?>
 							</ul>
 						</div>
 					</div>
@@ -58,14 +75,26 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="member_page.php" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
+					<a href="index.php" class="logo pull-left"><img src="themes/images//logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
+			<ul class="thumbnails">
+				<li class="span3">
+					<h4><span>Recent Purchase</span></h4>
+					<div class="product-box">
+					<p><a href="index.php"><img src="themes/images/ladies/6.png" alt="" /></a></p>
+					<a href="product_detail6.php" class="title">Clear Frames</a><br/>
+					<a href="product_detail6.php" class="category">-3.25</a>
+					<p class="price">$40.25</p>
+					</div>
+
+				</li>
+			</ul>
 			<section class="header_text sub">
-			<img class="pageBanner" src="themes/images/banner.png" alt="New products" >
-				<h4><span>Register</span></h4>
+			<h4><span>Account Infomation</span></h4>
 			</section>
 			<section class="main-content">
+
 				<div class="row">
 					<!-- <div class="span5">
 						<h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
@@ -92,117 +121,94 @@
 						</form>
 					</div> -->
 					<div class="span7" id="register_span7">
-						<h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
-						<form action="send_info.php" method="post" class="form-stacked">
+						<h4 class="title"><span class="text"><strong>Details</span></h4>
+						<form action="enterpassword.php" method="post" class="form-stacked">
 							<fieldset>
 								<div class="control-group">
 									<label class="control-label">Name</label>
 									<div class="controls">
-										<input type="text" name="name" placeholder="Enter your name" class="input-xlarge" pattern = "[a-zA-Z ]{1,}" id= "username"  title="Please enter your name" required>
-
+									<p><?php
+									if (session_status() == PHP_SESSION_NONE) {
+		    							session_start();
+									}
+									include_once 'connection.php';
+									$conn = Connect();
+									$query = "SELECT name FROM userinfo WHERE email='".$_SESSION['email']."'";
+									$result = mysqli_query($conn, $query)->fetch_assoc()["name"];
+									echo $result;?></p>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">Email address:</label>
 									<div class="controls">
-										<input type="text" name="email" placeholder="Enter your email" class="input-xlarge" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter a valid email address" required>
+										<p><?php
+										if (session_status() == PHP_SESSION_NONE) {
+			    							session_start();
+										}
+										include_once 'connection.php';
+										$conn = Connect();
+										$query = "SELECT email FROM userinfo WHERE email='".$_SESSION['email']."'";
+										$result = mysqli_query($conn, $query)->fetch_assoc()["email"];
+										echo $result;?></p>
 									</div>
 								</div>
-								<div class="control-group">
-									<label class="control-label">Password:</label>
-									<div class="controls">
-										<input type="password" name="password" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'Must contain atleast oen number and one uppercase and lowercase letter, and atleast 8 characters.' : ''); if(this.checkValidity()) form.password2.pattern = this.value;" required>
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label">Confirm Password:</label>
-									<div class="controls">
-										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onchange = "This does not match the above password." required>
-									</div>
-								</div>
-
 								<div class="control-group">
 									<label class="control-label">Street Address:</label>
 									<div class="controls">
-										<input type="text" name="address" placeholder="Enter your address" class="input-xlarge" pattern="[0-9_ ]+[a-z._ ].{1,}" onchange = "this.setCustomValidity(this.validity.patternMismatch ? 'This is an invalid address.' : '');" required>
+										<p><?php
+										if (session_status() == PHP_SESSION_NONE) {
+			    							session_start();
+										}
+										include_once 'connection.php';
+										$conn = Connect();
+										$query = "SELECT address FROM userinfo WHERE email='".$_SESSION['email']."'";
+										$result = mysqli_query($conn, $query)->fetch_assoc()["address"];
+										echo $result;?></p>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label">City:</label>
 									<div class="controls">
-										<input type="text" name="city" placeholder="Enter your city" class="input-xlarge" pattern="[a-zA-Z. _]{1,}" required>
+										<p><?php
+										if (session_status() == PHP_SESSION_NONE) {
+			    							session_start();
+										}
+										include_once 'connection.php';
+										$conn = Connect();
+										$query = "SELECT city FROM userinfo WHERE email='".$_SESSION['email']."'";
+										$result = mysqli_query($conn, $query)->fetch_assoc()["city"];
+										echo $result;?></p>
 									</div>
 								</div>
 								<div>
 								<div class="control-group">
 									<label class="control-label">State:</label>
-									<input list="browsers" name="state" placeholder="Select your state" required>
-
-										<datalist id="browsers">
-											<option value="AL">Alabama</option>
-											<option value="AK">Alaska</option>
-											<option value="AZ">Arizona</option>
-											<option value="AR">Arkansas</option>
-											<option value="CA">California</option>
-											<option value="CO">Colorado</option>
-											<option value="CT">Connecticut</option>
-											<option value="DE">Delaware</option>
-											<option value="DC">District Of Columbia</option>
-											<option value="FL">Florida</option>
-											<option value="GA">Georgia</option>
-											<option value="HI">Hawaii</option>
-											<option value="ID">Idaho</option>
-											<option value="IL">Illinois</option>
-											<option value="IN">Indiana</option>
-											<option value="IA">Iowa</option>
-											<option value="KS">Kansas</option>
-											<option value="KY">Kentucky</option>
-											<option value="LA">Louisiana</option>
-											<option value="ME">Maine</option>
-											<option value="MD">Maryland</option>
-											<option value="MA">Massachusetts</option>
-											<option value="MI">Michigan</option>
-											<option value="MN">Minnesota</option>
-											<option value="MS">Mississippi</option>
-											<option value="MO">Missouri</option>
-											<option value="MT">Montana</option>
-											<option value="NE">Nebraska</option>
-											<option value="NV">Nevada</option>
-											<option value="NH">New Hampshire</option>
-											<option value="NJ">New Jersey</option>
-											<option value="NM">New Mexico</option>
-											<option value="NY">New York</option>
-											<option value="NC">North Carolina</option>
-											<option value="ND">North Dakota</option>
-											<option value="OH">Ohio</option>
-											<option value="OK">Oklahoma</option>
-											<option value="OR">Oregon</option>
-											<option value="PA">Pennsylvania</option>
-											<option value="RI">Rhode Island</option>
-											<option value="SC">South Carolina</option>
-											<option value="SD">South Dakota</option>
-											<option value="TN">Tennessee</option>
-											<option value="TX">Texas</option>
-											<option value="UT">Utah</option>
-											<option value="VT">Vermont</option>
-											<option value="VA">Virginia</option>
-											<option value="WA">Washington</option>
-											<option value="WV">West Virginia</option>
-											<option value="WI">Wisconsin</option>
-											<option value="WY">Wyoming</option>
-										</datalist>
+									<p><?php
+									if (session_status() == PHP_SESSION_NONE) {
+		    							session_start();
+									}
+									include_once 'connection.php';
+									$conn = Connect();
+									$query = "SELECT state FROM userinfo WHERE email='".$_SESSION['email']."'";
+									$result = mysqli_query($conn, $query)->fetch_assoc()["state"];
+									echo $result;?></p>
 								</div>
 								<div class="control-group">
 									<label class="control-label">Zipcode:</label>
 									<div class="controls">
-										<input type="text" name="zip" placeholder="Enter your 5 digit zipcode" class="input-xlarge" pattern="[0-9]{5}" title="Zipcode must be 5 numbers long." required>
+										<p><?php
+										if (session_status() == PHP_SESSION_NONE) {
+			    							session_start();
+										}
+										include_once 'connection.php';
+										$conn = Connect();
+										$query = "SELECT zip FROM userinfo WHERE email='".$_SESSION['email']."'";
+										$result = mysqli_query($conn, $query)->fetch_assoc()["zip"];
+										echo $result;?></p>
 									</div>
-								</div>
-									<div class="control-group">
-									<p>Welcome to glasswap!</p>
-								</div>
+
 								<hr>
-								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Register"></div>
+								<div class="actions"><input tabindex="9" class="btn btn-inverse large" id="reg_btn" type="submit" value="Edit"></div>
 							</fieldset>
 						</form>
 					</div>

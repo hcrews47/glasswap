@@ -138,7 +138,20 @@
 								</address>
 								<h4><strong id="cost1">Price: $22.30</strong></h4>
 								<h4><strong id="bit_cost">Price in Bitcoin: </strong></h4>
+								<fieldset>
+									<div class="control-group">
+										<label class="control-label">Promo Code:</label>
+										<div class="controls">
+											<input type="text" code="code" placeholder="Enter a code for a discount!" class="input-large" id= "Promo Code"  title="Invalid Code!" required>
+
+										</div>
+									</div>
+									<div class="actions"><input tabindex="9" class="btn btn-inverse medium" id="reg_btn" type="submit" value="Enter" formaction="product_detail1_discount.php">
+									</div>
+								</fieldset>
 							</div>
+							<form action="send_info.php" method="post" class="form-stacked">
+						</form>
 							<!--
 							<div class="span5">
 								<form class="form-inline">

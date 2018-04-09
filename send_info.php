@@ -32,7 +32,7 @@ if(mysqli_errno($conn)!=1062){
   The glasswap team";
   if(!$mail->send()) {
     $not_sent = 'An error occurred. Try registering again.';
-    echo "<script type='text/javascript'>if(alert('$sent')){} else window.location = 'contact.php';</script>";
+    echo "<script type='text/javascript'>if(alert('$not_sent')){} else window.location = 'contact.php';</script>";
     //echo 'Mailer error: ' . $mail->ErrorInfo;
   } else {
     session_destroy();
