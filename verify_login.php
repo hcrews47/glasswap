@@ -26,6 +26,7 @@ if ($count != 1 || !password_verify($_POST['password'], $result2)) {
 else {
   session_destroy();
   session_start();
+  $_SESSION['logon'] = true;
   $_SESSION['email'] = $Email;
   $_SESSION['password'] = $Password;
   header("location: member_page.php");

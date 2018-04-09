@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<?php
-		if (!isset($_COOKIE["PHPSESSID"]) && empty($_COOKIE["PHPSESSID"]) ) {
+		session_start();
+		if (!isset($_SESSION['logon']) ) {
   		header("location: login.php");
 		}
  		?>
@@ -27,6 +28,11 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="themes/js/superfish.js"></script>
 		<script src="themes/js/jquery.scrolltotop.js"></script>
+		<script type='text/javascript'>
+		function logout() {
+			if(alert('Are you sure you want to logout?')){} else {window.location = 'index.php'};
+		}
+	</script>
 
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,18 +48,21 @@
 					<div class="account pull-right">
 						<ul class="user-menu">
 							<li class="hey">Hi, <?php
-							session_start();
+							if (session_status() == PHP_SESSION_NONE) {
+    							session_start();
+							}
 							include_once 'connection.php';
 							$conn = Connect();
 							$query = "SELECT name FROM userinfo WHERE email='".$_SESSION['email']."'";
 							$result = mysqli_query($conn, $query)->fetch_assoc()["name"];
 							echo $result;?></li>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="member_page.php">Home</a></li>
 							<li><a href="contact.php">Contact Us</a></li>
 							<!-- <li><a href="cart.php">Your Cart</a></li> -->
 							<!-- <li><a href="checkout.php">Checkout</a></li> -->
 							<li><a href="about.php">About Us</a></li>
-							<li><a href="#">My Account</a></li>
+							<li><a href="my_account.php">My Account</a></li>
+							<li onclick="logout()"><a href="#">Logout</a></li>
 							<!-- <li><a href="login.php">Login</a></li>
 							<li><a href="register.php">Register</a></li> -->
 						</ul>
@@ -64,7 +73,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="index.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+					<a href="member_page.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
 			<section  class="homepage-slider" id="home-slider">
@@ -93,7 +102,7 @@
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="text"><span class="line">Your Items <strong>for Sell</strong></span></span></span>
 									<span class="pull-right">
 										<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
 									</span>
@@ -138,6 +147,16 @@
 												</li>
 											</ul>
 										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="span12">
+										<h4 class="title">
+											<span class="pull-left"><span class="text"><span class="line">Recommendations <strong>for You</strong></span></span></span>
+											<span class="pull-right">
+												<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
+											</span>
+										</h4>
 										<div class="item">
 											<ul class="thumbnails">
 												<li class="span3">

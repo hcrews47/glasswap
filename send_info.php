@@ -35,8 +35,14 @@ if(mysqli_errno($conn)!=1062){
     echo "<script type='text/javascript'>if(alert('$sent')){} else window.location = 'contact.php';</script>";
     //echo 'Mailer error: ' . $mail->ErrorInfo;
   } else {
+    session_destroy();
+    session_start();
+    $_SESSION['logon'] = true;
+    $_SESSION['email'] = $Email;
+    $_SESSION['password'] = $Password;
     $sent = "You have registered successfully!";
-    echo "<script type='text/javascript'>if(alert('$sent')){} else window.location = 'contact.php';</script>";
+    echo "<script type='text/javascript'>if(alert('$sent')){} else window.location = 'member_page.php';</script>";
+
     //echo 'Message has been sent.';
   }
 }

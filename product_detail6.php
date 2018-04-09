@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<?php session_start(); ?>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
 		<script src="themes/js/superfish.js"></script>
 		<script src="themes/js/jquery.scrolltotop.js"></script>
 		<script src="themes/js/jquery.fancybox.js"></script>
+		<script src="logout.js"></script>
 		<script type="text/javascript">
     var xmlhttp = new XMLHttpRequest();
     var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -55,14 +57,28 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">
-							<li><a href="index.php">Home</a></li>
+							<li><a href="member_page.php">Home</a></li>
 							<li><a href="contact.php">Contact Us</a></li>
 							<!-- <li><a href="#">My Account</a></li> -->
 							<!-- <li><a href="cart.php">Your Cart</a></li> -->
 							<!-- <li><a href="checkout.php">Checkout</a></li> -->
 							<li><a href="about.php">About Us</a></li>
+							<?php if(!isset($_SESSION['logon'])){
+								?>
 							<li><a href="login.php">Login</a></li>
+							<?php
+						} ?>
+						<?php if(!isset($_SESSION['logon'])){
+							?>
 							<li><a href="register.php">Register</a></li>
+							<?php
+						} ?>
+						<?php if(isset($_SESSION['logon'])){
+							?>
+						<li><a href="my_account.php">My Account</a></li>
+						<li onclick="logout()"><a href="#">Logout</a></li>
+						<?php
+					} ?>
 						</ul>
 					</div>
 				</div>
@@ -71,7 +87,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="index.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+					<a href="member_page.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
 			<section class="header_text sub">
@@ -105,7 +121,11 @@
 								?>');" />
 							  <input type="hidden" name="posData" value="" />
 							  <input type="hidden" name="data" value="mqnRbZb0/9YYMCwjhb90s1q1Vbh+BjRNBg2FHM69n4x76TpGUTSdsEk65eRJUK4hUQkdoJiwI8dN0a37O/jwef+LOjsIXedbot002pq38ITA9cVOwgDXOjVx49yW4u7zaxuncMRp2my6k8Z0VABYzW5Wl4H7N3QxUju6YcPHwro=" />
-							  <input type="image" src="https://test.bitpay.com/img/button-small.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								<?php if(isset($_SESSION['logon'])){
+									?>
+								<input type="image" src="https://test.bitpay.com/img/button-small.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								<?php
+							} ?>
 							</form>
 
 

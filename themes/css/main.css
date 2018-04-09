@@ -3,6 +3,9 @@
 
 /* common
 ----------------------------------------------------------------------------- */
+#logout:hover{
+	cursor:pointer;
+}
 .hey{
 	font-weight: bold;
 }

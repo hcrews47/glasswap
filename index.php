@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head> 
+	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap E-commerce Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,9 @@
 			<script src="js/respond.min.js"></script>
 		<![endif]-->
 	</head>
+	<?php
+	session_start();
+	session_destroy(); ?>
     <body>
 		<div id="top-bar" class="container">
 			<div class="row">
@@ -52,7 +55,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-					<a href="index.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+					<a href="member_page.php" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 				</div>
 			</section>
 			<section  class="homepage-slider" id="home-slider">
@@ -167,7 +170,7 @@
 							</div>
 						</div>
 						<br/>
-						<!--  
+						<!--
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
